@@ -1,0 +1,200 @@
+/* =============================================
+   8 DOT MEDIA — minimal holding company
+   ============================================= */
+
+:root {
+  --bg:       #0A0A0A;
+  --bg-card:  #111111;
+  --border:   #222222;
+  --text:     #E8E8E8;
+  --text-dim: #555555;
+  --accent:   #FFFFFF;
+  --font:     'Inter', sans-serif;
+  --mono:     'Space Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+/* --- Nav --- */
+nav {
+  padding: 1.5rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+}
+
+.logo-wrap { display: flex; align-items: center; }
+
+.logo-text {
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  color: var(--accent);
+  letter-spacing: -0.05em;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo-large {
+  margin-bottom: 1rem;
+}
+
+.logo-text-large {
+  font-family: var(--mono);
+  font-size: 5rem;
+  color: var(--accent);
+  letter-spacing: -0.05em;
+}
+
+header h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1rem;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+}
+
+/* --- Sections --- */
+section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+section h2 {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  font-family: var(--mono);
+  margin-bottom: 2rem;
+}
+
+/* --- Brand grid --- */
+.brand-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  border: 1px solid var(--border);
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--bg-card);
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s;
+  border-bottom: 1px solid var(--border);
+}
+
+.brand-card:last-child { border-bottom: none; }
+
+.brand-card:not(.coming):hover {
+  background: #161616;
+}
+
+.brand-card.coming {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.brand-icon {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.brand-info { flex: 1; }
+
+.brand-name {
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--accent);
+  margin-bottom: 0.2rem;
+}
+
+.brand-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.arrow {
+  color: var(--text-dim);
+  font-size: 1.2rem;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.brand-card:hover .arrow {
+  transform: translateX(4px);
+  color: var(--accent);
+}
+
+/* --- About --- */
+#about p {
+  font-size: 1.05rem;
+  color: var(--text-dim);
+  max-width: 500px;
+  font-weight: 300;
+}
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-dim);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+footer a:hover { color: var(--accent); }
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  .brand-card { padding: 1.2rem; gap: 1rem; }
+  .arrow { display: none; }
+}
